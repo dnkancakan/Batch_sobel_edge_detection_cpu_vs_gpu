@@ -1,4 +1,4 @@
-# GPU Capstone: Batch Sobel Edge Detection with a CPU vs GPU Study
+# GPU Capstone: Batch Sobel edge detection with a CPU vs GPU study
 
 ## Overview
 
