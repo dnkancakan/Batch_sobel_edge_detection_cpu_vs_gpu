@@ -1,0 +1,17 @@
+INSTALL
+
+Ubuntu with an NVIDIA GPU:
+1. Install the NVIDIA driver and the CUDA toolkit from the NVIDIA website,
+   or with: sudo apt install nvidia-cuda-toolkit
+2. Install build tools and python: sudo apt install build-essential python3
+3. Verify with: nvcc --version and nvidia-smi
+4. Build with: make
+5. Generate data with: python3 src/generate_data.py
+6. Run with: bash run.sh
+
+Google Colab (no local GPU needed):
+1. Create a notebook and set the runtime to a GPU.
+2. Upload src/edge_detect.cu and src/generate_data.py.
+3. Run: !python3 src/generate_data.py then
+   !nvcc -std=c++11 -O2 src/edge_detect.cu -o edge_detect -lcudart then
+   !./edge_detect -i data/input -o data/output
